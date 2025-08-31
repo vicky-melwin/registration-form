@@ -1,0 +1,160 @@
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
+
+<style>
+    .body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        background: #eef2f7;
+    }
+
+    .nameError,
+    .emailError,
+    .passError {
+        color: red;
+        display: none;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+    }
+
+    table {
+        background: white;
+        padding: 50px 50px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        width: 800px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    table td input{
+        padding: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+</style>
+
+<form>
+    <table>
+        <tr>
+            <td style="display: flex; padding-left: 50%;"><h1 class="text-3xl font-bold">Registration Form</h1></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" placeholder="Name" id="name" required></td>
+            <td><span class="nameError">Name must contains only letters.</span></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" placeholder="Email" id="email" required></td>
+            <td><span class="emailError">Please enter valid gmail id.</span></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" placeholder="Password" id="password" required></td>
+            <td><span class="passError">Password must contain at least 6 character.</span></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" id="submit"></td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    var submit = document.getElementById("submit")
+    submit.addEventListener("click", function () {
+        event.preventDefault()
+
+        var nameRegex = /^[a-zA-Z]+$/
+        var emailRegex = /^[a-zA-Z0-9]+@gmail\.com/
+        var passRegex = /^[a-zA-Z1-9]+$/
+
+        var name = document.getElementById("name")
+        var email = document.getElementById("email")
+        var password = document.getElementById("password")
+
+        var validate = true
+
+        if (nameRegex.test(name.value) == false) {
+            document.querySelector(".nameError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".nameError").style.display = "none"
+        }
+
+        if (emailRegex.test(email.value) == false) {
+            document.querySelector(".emailError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".emailError").style.display = "none"
+        }
+
+        if (passRegex.test(password.value) == false) {
+            document.querySelector(".passError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".passError").style.display = "none"
+        }
+
+        if (validate == true) {
+            alert("✅ Form Submitted Successfully")
+        }
+
+    })
+</script>
+
+<!-- <script>
+
+    var submit = document.getElementById("submit")
+
+    submit.addEventListener("click", function () {
+        event.preventDefault()
+
+        var nameRegex = /^[a-zA-Z]+$/
+        var emailRegex = /^[a-zA-z1-9]+@gmail\.com/
+        var passRegex = /^\d{6}+$/
+
+        var name = document.getElementById("name")
+        var email = document.getElementById("email")
+        var password = document.getElementById("password")
+
+        var validate = true
+
+        if (nameRegex.test(name.value) == false) {
+            document.querySelector(".nameError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".nameError").style.display = "none"
+        }
+        if (emailRegex.test(email.value) == false) {
+            document.querySelector(".emailError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".emailError").style.display = "none"
+        }
+        if (passRegex.test(password.value) == false) {
+            document.querySelector(".passError").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".passError").style.display = "none"
+        }
+
+        if (validate == true) {
+            alert("Form Submitted Successfully")
+        }
+
+
+    })
+
+</script> -->
