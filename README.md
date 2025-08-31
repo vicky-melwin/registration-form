@@ -1,6 +1,6 @@
 🚀 I’m excited to share my new personal project – **Interactive Registration Form**, a **frontend web form** built with **HTML, CSS, and JavaScript** that validates user input in real time.
 
-🔗 **Live Demo**: *(Add your GitHub Pages link here)*
+🔗 Live Demo: https://vicky-melwin.github.io/registration-form/
 
 🎯 **Project Highlights**:
 
