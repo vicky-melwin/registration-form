@@ -1,47 +1,77 @@
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
-
 <style>
-    .body {
+    body {
         font-family: Arial, sans-serif;
         height: 100vh;
+        margin: 0;
         background: #eef2f7;
+        background: url("bg_paywall.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2%;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 250px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        padding: 8px 20px;
+        border: none;
+        background: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background: #45a049;
     }
 
     .nameError,
     .emailError,
     .passError {
         color: red;
+        font-size: 13px;
         display: none;
     }
-
-    form {
-        display: flex;
-        justify-content: center;
-        margin-top: 15%;
-    }
-
-    table {
-        background: white;
-        padding: 50px 50px;
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        width: 800px;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    table td input{
-        padding: 5px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
 </style>
 
 <form>
     <table>
         <tr>
-            <td style="display: flex; padding-left: 50%;"><h1 class="text-3xl font-bold">Registration Form</h1></td>
+            <td></td>
+            <td style="display: flex; margin-left: -15%;">
+                <h1 class="text-3xl font-bold">Registration Form</h1>
+            </td>
+
         </tr>
         <tr>
             <td>Name:</td>
@@ -110,51 +140,3 @@
 
     })
 </script>
-
-<!-- <script>
-
-    var submit = document.getElementById("submit")
-
-    submit.addEventListener("click", function () {
-        event.preventDefault()
-
-        var nameRegex = /^[a-zA-Z]+$/
-        var emailRegex = /^[a-zA-z1-9]+@gmail\.com/
-        var passRegex = /^\d{6}+$/
-
-        var name = document.getElementById("name")
-        var email = document.getElementById("email")
-        var password = document.getElementById("password")
-
-        var validate = true
-
-        if (nameRegex.test(name.value) == false) {
-            document.querySelector(".nameError").style.display = "inline"
-            validate = false
-        }
-        else {
-            document.querySelector(".nameError").style.display = "none"
-        }
-        if (emailRegex.test(email.value) == false) {
-            document.querySelector(".emailError").style.display = "inline"
-            validate = false
-        }
-        else {
-            document.querySelector(".emailError").style.display = "none"
-        }
-        if (passRegex.test(password.value) == false) {
-            document.querySelector(".passError").style.display = "inline"
-            validate = false
-        }
-        else {
-            document.querySelector(".passError").style.display = "none"
-        }
-
-        if (validate == true) {
-            alert("Form Submitted Successfully")
-        }
-
-
-    })
-
-</script> -->
